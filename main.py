@@ -27,4 +27,6 @@ netflix_df = pd.read_csv("/home/sergij/PycharmProjects/Investigating_Netflix_Mov
 netflix_df_movies_only = netflix_df[netflix_df['type'] == 'Movie']
 # Select only the columns of interest
 netflix_movies_col_subset = netflix_df_movies_only[['title', 'country', 'genre', 'release_year', 'duration']]
-print(netflix_movies_col_subset.head())
+
+short_movies = netflix_movies_col_subset[netflix_movies_col_subset['duration'] < 60]
+print(short_movies.head(20))
