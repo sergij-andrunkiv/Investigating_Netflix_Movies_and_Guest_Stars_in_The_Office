@@ -6,3 +6,5 @@ movie_dict = {
     'years': years,
     'durations': durations
 }
+
+print(movie_dict)
