@@ -36,7 +36,19 @@ def show_scatter():
     plt.show()
 
 
-show_scatter()
-
 short_movies = netflix_movies_col_subset[netflix_movies_col_subset['duration'] < 60]
 print(short_movies.head(20))
+
+
+colors = []
+for index, row in netflix_movies_col_subset.iterrows():
+    if row['genre'] == 'Children':
+        colors.append('red')
+    elif row['genre'] == 'Documentaries':
+        colors.append('blue')
+    elif row['genre'] == 'Stand-Up':
+        colors.append('green')
+    else:
+        colors.append('black')
+
+print(colors[0:11])
