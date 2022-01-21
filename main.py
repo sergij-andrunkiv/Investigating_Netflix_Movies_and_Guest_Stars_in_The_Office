@@ -28,3 +28,13 @@ netflix_df_movies_only = netflix_df[netflix_df['type'] == 'Movie']
 # Select only the columns of interest
 netflix_movies_col_subset = netflix_df_movies_only[['title', 'country', 'genre', 'release_year', 'duration']]
 print(netflix_movies_col_subset.head())
+
+
+def show_scatter():
+    fig = plt.figure(figsize=(12,8))
+    plt.scatter(netflix_movies_col_subset['release_year'], netflix_movies_col_subset['duration'])
+    plt.title("Movie Duration by Year of Release")
+    plt.show()
+
+
+show_scatter()
