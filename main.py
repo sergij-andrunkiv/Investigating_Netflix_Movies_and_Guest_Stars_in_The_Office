@@ -51,4 +51,12 @@ for index, row in netflix_movies_col_subset.iterrows():
     else:
         colors.append('black')
 
-print(colors[0:11])
+# Set the figure style and initalize a new figure
+plt.style.use('fivethirtyeight')
+fig = plt.figure(figsize=(12,8))
+
+plt.scatter(netflix_movies_col_subset['release_year'], netflix_movies_col_subset['duration'], color=colors)
+plt.title('Movie duration by year of release')
+plt.xlabel('Release year')
+plt.ylabel('Duration (min)')
+plt.show()
