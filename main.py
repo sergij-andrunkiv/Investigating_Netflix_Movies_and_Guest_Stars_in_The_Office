@@ -22,4 +22,9 @@ def show_graph():
 
 
 netflix_df = pd.read_csv("/home/sergij/PycharmProjects/Investigating_Netflix_Movies_and_Guest_Stars_in_The_Office/datasets/netflix_data.csv")
-print(netflix_df.head())
+
+# Subset the DataFrame for type "Movie"
+netflix_df_movies_only = netflix_df[netflix_df['type'] == 'Movie']
+# Select only the columns of interest
+netflix_movies_col_subset = netflix_df_movies_only[['title', 'country', 'genre', 'release_year', 'duration']]
+print(netflix_movies_col_subset.head())
